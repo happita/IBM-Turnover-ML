@@ -26,115 +26,115 @@ for column in categorical_columns:
 print("Descriptive Statistics after Removing Outliers:")
 print(data.describe())
 
-# numerical_columns = ['Age', 'YearsWithCurrManager', 'YearsSinceLastPromotion', 'MonthlyIncome', 'YearsAtCompany', 'TotalWorkingYears']
-# for column in numerical_columns:
-#     plt.figure(figsize=(8, 4))
-#     plt.hist(data[column], bins=20, edgecolor='k', alpha=0.7)
-#     plt.title(f"Histogram of {column}")
-#     plt.xlabel(column)
-#     plt.ylabel("Frequency")
-#     plt.show()
+numerical_columns = ['Age', 'YearsWithCurrManager', 'YearsSinceLastPromotion', 'MonthlyIncome', 'YearsAtCompany', 'TotalWorkingYears']
+for column in numerical_columns:
+    plt.figure(figsize=(8, 4))
+    plt.hist(data[column], bins=20, edgecolor='k', alpha=0.7)
+    plt.title(f"Histogram of {column}")
+    plt.xlabel(column)
+    plt.ylabel("Frequency")
+    plt.show()
 
 
-# attrition_counts = data['Attrition'].value_counts()
-# plt.figure(figsize=(6, 6))
-# plt.pie(attrition_counts, labels=['Stayed', 'Left'], autopct='%1.1f%%', colors=['lightblue', 'salmon'], startangle=90)
-# plt.title("Attrition Distribution")
-# plt.show()
-# import matplotlib.pyplot as plt
+attrition_counts = data['Attrition'].value_counts()
+plt.figure(figsize=(6, 6))
+plt.pie(attrition_counts, labels=['Stayed', 'Left'], autopct='%1.1f%%', colors=['lightblue', 'salmon'], startangle=90)
+plt.title("Attrition Distribution")
+plt.show()
+import matplotlib.pyplot as plt
 
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
-# gender_counts = data['Gender'].value_counts()
-# plt.figure(figsize=(6, 6))
-# plt.pie(gender_counts, labels=['Male', 'Female'], autopct='%1.1f%%', colors=['skyblue', 'pink'], startangle=90)
-# plt.title("Gender Distribution")
-# plt.show()
+gender_counts = data['Gender'].value_counts()
+plt.figure(figsize=(6, 6))
+plt.pie(gender_counts, labels=['Male', 'Female'], autopct='%1.1f%%', colors=['skyblue', 'pink'], startangle=90)
+plt.title("Gender Distribution")
+plt.show()
 
-# marital_status_counts = data['MaritalStatus'].value_counts()
-# plt.figure(figsize=(6, 6))
-# plt.pie(marital_status_counts, labels=marital_status_counts.index, autopct='%1.1f%%', colors=['lightgreen', 'salmon', 'gold'], startangle=90)
-# plt.title("Marital Status Distribution")
-# plt.show()
+marital_status_counts = data['MaritalStatus'].value_counts()
+plt.figure(figsize=(6, 6))
+plt.pie(marital_status_counts, labels=marital_status_counts.index, autopct='%1.1f%%', colors=['lightgreen', 'salmon', 'gold'], startangle=90)
+plt.title("Marital Status Distribution")
+plt.show()
 
- # نمودار دایره‌ای برای ویژگی OverTime
-# overtime_counts = data['OverTime'].value_counts()
-# plt.figure(figsize=(6, 6))
-# plt.pie(overtime_counts, labels=['No', 'Yes'], autopct='%1.1f%%', colors=['lightgreen', 'salmon'], startangle=90)
-# plt.title("OverTime Distribution")
-# plt.show()
+ نمودار دایره‌ای برای ویژگی OverTime
+overtime_counts = data['OverTime'].value_counts()
+plt.figure(figsize=(6, 6))
+plt.pie(overtime_counts, labels=['No', 'Yes'], autopct='%1.1f%%', colors=['lightgreen', 'salmon'], startangle=90)
+plt.title("OverTime Distribution")
+plt.show()
 
-# # نمودار دایره‌ای برای ویژگی JobRole
-# jobrole_counts = data['JobRole'].value_counts()
-# plt.figure(figsize=(8, 8))
-# plt.pie(jobrole_counts, labels=jobrole_counts.index, autopct='%1.1f%%', startangle=90, colors=plt.cm.tab10.colors)
-# plt.title("Job Role Distribution")
-# plt.tight_layout()
-# plt.show()
+# نمودار دایره‌ای برای ویژگی JobRole
+jobrole_counts = data['JobRole'].value_counts()
+plt.figure(figsize=(8, 8))
+plt.pie(jobrole_counts, labels=jobrole_counts.index, autopct='%1.1f%%', startangle=90, colors=plt.cm.tab10.colors)
+plt.title("Job Role Distribution")
+plt.tight_layout()
+plt.show()
 
-# # بررسی ارتباط اعداد با مقادیر متنی در JobRole
-# if 'JobRole' in label_encoders:
-#     jobrole_mapping = dict(zip(range(len(label_encoders['JobRole'].classes_)), label_encoders['JobRole'].classes_))
-#     print("Mapping of JobRole numbers to roles:")
-#     for key, value in jobrole_mapping.items():
-#         print(f"{key}: {value}")
-# else:
-#     print("LabelEncoder for 'JobRole' not found. Please ensure it was encoded using LabelEncoder.")
-
-# import seaborn as sns
-# import matplotlib.pyplot as plt
-
-# # نمودار دایره‌ای برای ویژگی JobLevel
-# joblevel_counts = data['JobLevel'].value_counts()
-# plt.figure(figsize=(8, 8))
-# plt.pie(joblevel_counts, labels=joblevel_counts.index, autopct='%1.1f%%', startangle=90, colors=plt.cm.Paired.colors)
-# plt.title("Job Level Distribution")
-# plt.tight_layout()
-# plt.show()
-
-# # نمودار دایره‌ای برای ویژگی WorkLifeBalance
-# worklifebalance_counts = data['WorkLifeBalance'].value_counts()
-# plt.figure(figsize=(8, 8))
-# plt.pie(
-#     worklifebalance_counts,
-#     labels=worklifebalance_counts.index,
-#     autopct='%1.1f%%',
-#     startangle=90,
-#     colors=plt.cm.Set3.colors
-# )
-# plt.title("Work-Life Balance Distribution")
-# plt.tight_layout()
-# plt.show()
+# بررسی ارتباط اعداد با مقادیر متنی در JobRole
+if 'JobRole' in label_encoders:
+    jobrole_mapping = dict(zip(range(len(label_encoders['JobRole'].classes_)), label_encoders['JobRole'].classes_))
+    print("Mapping of JobRole numbers to roles:")
+    for key, value in jobrole_mapping.items():
+        print(f"{key}: {value}")
+else:
+    print("LabelEncoder for 'JobRole' not found. Please ensure it was encoded using LabelEncoder.")
 
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# import pandas as pd
-# pd.set_option('display.max_rows', None)
-# pd.set_option('display.max_columns', None)
+# نمودار دایره‌ای برای ویژگی JobLevel
+joblevel_counts = data['JobLevel'].value_counts()
+plt.figure(figsize=(8, 8))
+plt.pie(joblevel_counts, labels=joblevel_counts.index, autopct='%1.1f%%', startangle=90, colors=plt.cm.Paired.colors)
+plt.title("Job Level Distribution")
+plt.tight_layout()
+plt.show()
+
+# نمودار دایره‌ای برای ویژگی WorkLifeBalance
+worklifebalance_counts = data['WorkLifeBalance'].value_counts()
+plt.figure(figsize=(8, 8))
+plt.pie(
+    worklifebalance_counts,
+    labels=worklifebalance_counts.index,
+    autopct='%1.1f%%',
+    startangle=90,
+    colors=plt.cm.Set3.colors
+)
+plt.title("Work-Life Balance Distribution")
+plt.tight_layout()
+plt.show()
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+import pandas as pd
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
 
 correlation_matrix = data.corr()
 
-# print("Correlation Matrix:")
-# print(correlation_matrix)
+print("Correlation Matrix:")
+print(correlation_matrix)
 
-# plt.figure(figsize=(20, 18))
-# sns.heatmap(
-#     correlation_matrix,
-#     annot=True,
-#     fmt=".2f",
-#     cmap="coolwarm",
-#     cbar=True,
-#     vmin=-1,
-#     vmax=1,
-#     linewidths=0.5,
-#     annot_kws={"size": 8}  # تنظیم اندازه متن اعداد
-# )
-# plt.xticks(rotation=45, fontsize=10)
-# plt.yticks(fontsize=10)
-# plt.title("Correlation Matrix Heatmap", fontsize=14)
-# plt.tight_layout()
-# plt.show()
+plt.figure(figsize=(20, 18))
+sns.heatmap(
+    correlation_matrix,
+    annot=True,
+    fmt=".2f",
+    cmap="coolwarm",
+    cbar=True,
+    vmin=-1,
+    vmax=1,
+    linewidths=0.5,
+    annot_kws={"size": 8}  # تنظیم اندازه متن اعداد
+)
+plt.xticks(rotation=45, fontsize=10)
+plt.yticks(fontsize=10)
+plt.title("Correlation Matrix Heatmap", fontsize=14)
+plt.tight_layout()
+plt.show()
 
 numerical_columns = data.select_dtypes(include=['int64', 'float64']).columns
 scaler = StandardScaler()
