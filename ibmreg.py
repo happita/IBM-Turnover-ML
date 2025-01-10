@@ -57,6 +57,55 @@ print(data.describe())
 # plt.title("Marital Status Distribution")
 # plt.show()
 
+ # نمودار دایره‌ای برای ویژگی OverTime
+# overtime_counts = data['OverTime'].value_counts()
+# plt.figure(figsize=(6, 6))
+# plt.pie(overtime_counts, labels=['No', 'Yes'], autopct='%1.1f%%', colors=['lightgreen', 'salmon'], startangle=90)
+# plt.title("OverTime Distribution")
+# plt.show()
+
+# # نمودار دایره‌ای برای ویژگی JobRole
+# jobrole_counts = data['JobRole'].value_counts()
+# plt.figure(figsize=(8, 8))
+# plt.pie(jobrole_counts, labels=jobrole_counts.index, autopct='%1.1f%%', startangle=90, colors=plt.cm.tab10.colors)
+# plt.title("Job Role Distribution")
+# plt.tight_layout()
+# plt.show()
+
+# # بررسی ارتباط اعداد با مقادیر متنی در JobRole
+# if 'JobRole' in label_encoders:
+#     jobrole_mapping = dict(zip(range(len(label_encoders['JobRole'].classes_)), label_encoders['JobRole'].classes_))
+#     print("Mapping of JobRole numbers to roles:")
+#     for key, value in jobrole_mapping.items():
+#         print(f"{key}: {value}")
+# else:
+#     print("LabelEncoder for 'JobRole' not found. Please ensure it was encoded using LabelEncoder.")
+
+# import seaborn as sns
+# import matplotlib.pyplot as plt
+
+# # نمودار دایره‌ای برای ویژگی JobLevel
+# joblevel_counts = data['JobLevel'].value_counts()
+# plt.figure(figsize=(8, 8))
+# plt.pie(joblevel_counts, labels=joblevel_counts.index, autopct='%1.1f%%', startangle=90, colors=plt.cm.Paired.colors)
+# plt.title("Job Level Distribution")
+# plt.tight_layout()
+# plt.show()
+
+# # نمودار دایره‌ای برای ویژگی WorkLifeBalance
+# worklifebalance_counts = data['WorkLifeBalance'].value_counts()
+# plt.figure(figsize=(8, 8))
+# plt.pie(
+#     worklifebalance_counts,
+#     labels=worklifebalance_counts.index,
+#     autopct='%1.1f%%',
+#     startangle=90,
+#     colors=plt.cm.Set3.colors
+# )
+# plt.title("Work-Life Balance Distribution")
+# plt.tight_layout()
+# plt.show()
+
 import seaborn as sns
 import matplotlib.pyplot as plt
 
